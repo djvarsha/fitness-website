@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background: #ff6a6a;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ff6a6a;
+            text-align: center;
+        }
+
+        .exercise-category, .diet-category, .tips-category {
+            margin: 1rem 0;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            padding: 0.7rem;
+            font-size: 1rem;
+            background: #ff6a6a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #e55d5d;
+        }
+
+        #bmi-result {
+            font-weight: bold;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+
+        .interactive {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .interactive:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Fitness Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#exercises">Exercises</a></li>
+                <li><a href="#nutrition">Nutrition</a></li>
+                <li><a href="#bmi">BMI Calculator</a></li>
+                <li><a href="#tips">Tips for Beginners</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="exercises" class="interactive">
+        <h2>Exercises</h2>
+        <div class="exercise-category">
+            <h3>Beginner Workout Plan for Muscle Gain</h3>
+            <h4>Warm-up Exercises:</h4>
+            <ul>
+                <li>Light cardio (5-10 minutes)</li>
+                <li>Dynamic stretching (leg swings, arm circles, etc.)</li>
+            </ul>
+            <h4>Upper Body Exercises:</h4>
+            <ul>
+                <li>Incline Dumbbell Press: 3 sets of 8-12 reps (Rest for 60-90 seconds)</li>
+                <li>Cable Lateral Raises: 3 sets of 12-15 reps (Rest for 60-90 seconds)</li>
+                <li>Tricep Kickbacks: 3 sets of 12-15 reps (Rest for 60-90 seconds)</li>
+            </ul>
+            <h4>Lower Body Exercises:</h4>
+            <ul>
+                <li>Step-Ups: 3 sets of 12-15 reps per leg (Rest for 60-90 seconds)</li>
+                <li>Bulgarian Split Squats: 3 sets of 12-15 reps per leg (Rest for 60-90 seconds)</li>
+                <li>Calf Raises on a Step: 3 sets of 12-15 reps (Rest for 60-90 seconds)</li>
+            </ul>
+            <h4>Core Exercises:</h4>
+            <ul>
+                <li>Plank: 3 sets of 30-60 seconds</li>
+                <li>Russian Twists: 3 sets of 12-15 reps</li>
+                <li>Leg Raises: 3 sets of 12-15 reps</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="nutrition" class="interactive">
+        <h2>Nutrition and Diet Plans</h2>
+        <div class="diet-category">
+            <h3>Weight Loss</h3>
+            <p>Focus on a calorie deficit with high protein and low-carb meals. Include vegetables, lean meats, and whole grains.</p>
+        </div>
+        <div class="diet-category">
+            <h3>Muscle Gain</h3>
+            <p>Consume a calorie surplus with a protein-rich diet. Include chicken, eggs, fish, and complex carbs like brown rice.</p>
+        </div>
+        <div class="diet-category">
+            <h3>Maintenance</h3>
+            <p>Maintain a balanced diet with equal portions of proteins, carbs, and fats. Drink plenty of water and eat fruits and vegetables.</p>
+        </div>
+    </section>
+
+    <section id="bmi" class="interactive">
+        <h2>BMI Calculator</h2>
+        <form id="bmi-form">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" required>
+
+            <button type="button" onclick="calculateBMI()">Calculate</button>
+        </form>
+        <p id="bmi-result"></p>
+    </section>
+
+    <section id="tips" class="interactive">
+        <h2>Tips for Beginners</h2>
+        <div class="tips-category">
+            <h3>Nutrition Tips</h3>
+            <ul>
+                <li>Eat Carbs After Working Out: Having carbs post-workout helps restore your energy levels.</li>
+                <li>Pack Smart Snacks: Keep fruits, nuts, and seeds handy to stay satisfied and build muscle.</li>
+                <li>Stay Hydrated: Drinking enough water is crucial for muscle growth and recovery.</li>
+            </ul>
+        </div>
+        <div class="tips-category">
+            <h3>Workout Tips</h3>
+            <ul>
+                <li>Use Progressive Overload: Slowly increase weights or resistance to keep challenging your muscles.</li>
+                <li>Mix Up Your Reps: Change the number of repetitions to work different muscle fibers.</li>
+                <li>Add Jump Training: Include exercises like jump squats and box jumps to build power and explosive strength.</li>
+            </ul>
+        </div>
+        <div class="tips-category">
+            <h3>Mental Preparation Tips</h3>
+            <ul>
+                <li>Set Realistic Expectations: Set realistic expectations and celebrate small victories.</li>
+                <li>Find a Support System: Find a support system like a workout buddy or online community to help stay motivated.</li>
+                <li>Practice Mindfulness: Practice mindfulness techniques like meditation and deep breathing to help manage stress and stay focused.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Fitness Hub. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value) / 100;
+            if (!weight || !height) {
+                document.getElementById('bmi-result').textContent = 'Please enter valid inputs.';
+                return;
+            }
+            const bmi = (weight / (height * height)).toFixed(2);
+            let category = '';
+            if (bmi < 18.5) {
+                category = 'Underweight';
+            } else if (bmi < 24.9) {
+                category = 'Normal weight';
+            } else if (bmi < 29.9) {
+                category = 'Overweight';
+            } else {
+                category = 'Obesity';
+            }
+            document.getElementById('bmi-result').textContent = `Your BMI is ${bmi} (${category}).`;
+        }
+    </script>
+</body>
+</html>
